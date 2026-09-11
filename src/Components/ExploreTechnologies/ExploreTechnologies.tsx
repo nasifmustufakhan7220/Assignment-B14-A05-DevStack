@@ -35,7 +35,9 @@ const ExploreTechnologies = ({exploreTechnologyPromise}:IExploreTechnologiesProp
 
                     {/* Subtitle */}
                     <p className="mt-1 text-[13px] text-gray-400">
-                        No technologies selected yet.
+                        {
+                            stacks.length > 0 ? `${stacks.length} Technology Selected`: `No technologies selected yet.`
+                        }
                     </p>
 
                     {/* Empty Stack Box */}
@@ -44,15 +46,21 @@ const ExploreTechnologies = ({exploreTechnologyPromise}:IExploreTechnologiesProp
                             stacks.length > 0 ? <div className="grid grid-cols-1 gap-2">
                             {
                                 stacks.map(stack => <AddToCartCard key={stack.id} stack={stack} />)
+                            
+                        
                             }
+                            
                         </div> : <p className="text-[13px] text-gray-400">
                         Your stack is empty.
                         </p>
                         }
-
-                        
+                         
                     </div>
+                    {
+                            stacks.length > 0 ? <button className="btn btn-block  btn-outline btn-secondary">Remove All</button> : ``
+                    }
                 </div>
+               
             </div>
         </div>
     );

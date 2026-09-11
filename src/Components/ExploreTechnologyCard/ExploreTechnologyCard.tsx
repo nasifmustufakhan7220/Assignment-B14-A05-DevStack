@@ -13,12 +13,12 @@ const ExploreTechnologyCard = ({technology, handelStack}:ITechnologyProps) => {
         handelStack(technology);
     }
     return (
-    <div className="w-full rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+    <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
 
       {/* Icon + Popular */}
       <div className="flex items-center justify-between">
         
-        <img src={icon} alt={name} className="w-12 h-12 object-contain"/>
+        <img src={icon} alt={name} className="w-12 h-12"/>
         
 
         <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-500">
