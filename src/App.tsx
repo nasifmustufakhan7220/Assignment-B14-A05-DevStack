@@ -1,9 +1,11 @@
+import Navbar from "./Components/Navbar/Navbar"
+
 function App() {
   
 
   return (
     <>
-      <img src="https://techicons.dev/icons/react" alt="" />
+      <Navbar/>
     </>
   )
 }
