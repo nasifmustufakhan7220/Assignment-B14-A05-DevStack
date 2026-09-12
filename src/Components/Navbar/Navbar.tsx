@@ -6,11 +6,7 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 w-full bg-white border-b border-gray-200">
 
       <div className="max-w-330 mx-auto h-16 px-4">
-
-        {/* ================= MOBILE / TABLET ================= */}
         <div className="relative flex h-full items-center lg:hidden">
-
-          {/* Hamburger */}
           <button
             className="btn btn-ghost btn-circle"
             aria-label="Open menu"
@@ -18,19 +14,9 @@ const Navbar = () => {
             <FaBars className="text-2xl text-gray-600" />
           </button>
 
-          {/* Center Logo */}
-          <a
-            href="/"
-            className="absolute left-1/2 -translate-x-1/2"
-          >
-            <img
-              src={logo}
-              alt="DevStack"
-              className="w-26.25 h-auto"
-            />
+          <a href="/" className="absolute left-1/2 -translate-x-1/2">
+            <img src={logo} alt="DevStack" className="w-26.25 h-auto"/>
           </a>
-
-          {/* Right Buttons */}
           <div className="ml-auto flex items-center gap-2">
             <button className="font-medium text-gray-700 hover:text-pink-600 transition">
               Sign In
@@ -43,11 +29,8 @@ const Navbar = () => {
 
         </div>
 
-
-        {/* ================= LARGE SCREEN ================= */}
         <div className="hidden lg:grid lg:grid-cols-[1fr_auto_1fr] h-full items-center">
 
-          {/* Logo - Left */}
           <div className="justify-self-start">
             <a href="/">
               <img
@@ -58,9 +41,7 @@ const Navbar = () => {
             </a>
           </div>
 
-
-          {/* Navigation - Exact Center */}
-          <ul className="flex items-center gap-7">
+          <ul className="flex items-center gap-7 font-bold">
 
             <li>
               <a
