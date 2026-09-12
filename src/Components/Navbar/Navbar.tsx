@@ -14,7 +14,7 @@ const Navbar = () => {
             <FaBars className="text-2xl text-gray-600" />
           </button>
 
-          <a href="/" className="absolute left-1/2 -translate-x-1/2">
+          <a href="/" className="absolute left-[40.333333%] -translate-x-1/2">
             <img src={logo} alt="DevStack" className="w-26.25 h-auto"/>
           </a>
           <div className="ml-auto flex items-center gap-2">
