@@ -1,16 +1,27 @@
 import { FaStar } from "react-icons/fa";
 import type { ITechnologyType } from "../../Type/Type";
+// import type { Dispatch, SetStateAction } from "react";
 
 interface ITechnologyProps{
     technology: ITechnologyType;
-    handelStack: (t:ITechnologyType) => void
+    handelStack: (t:ITechnologyType) => void;
+    stacks: ITechnologyType[];
+    // setStacks: Dispatch<SetStateAction<ITechnologyType[]>>
 }
 
-const ExploreTechnologyCard = ({technology, handelStack}:ITechnologyProps) => {
+const ExploreTechnologyCard = ({technology, handelStack, stacks}:ITechnologyProps) => {
     const {badge, category, description, difficulty, icon, name, rating} = technology;
 
-    const handelAddToCart = ()=>{
-        handelStack(technology);
+    
+    const exited = stacks.some(s=> s.id === technology.id);
+    
+    const handelAddToCart = (t:ITechnologyType)=>{
+      if(exited){
+        console.log(exited);
+        return;
+      }
+      handelStack(t);
+      
     }
     return (
     <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
@@ -60,9 +71,9 @@ const ExploreTechnologyCard = ({technology, handelStack}:ITechnologyProps) => {
       </div>
 
       {/* Add to Stack Button */}
-      <button onClick={handelAddToCart}
-        className="mt-4 w-full rounded-lg bg-gray-950 py-2.5 text-sm font-medium text-white transition hover:bg-gray-800">
-        Add to Stack
+      <button onClick={()=>handelAddToCart(technology)} disabled={exited}
+        className="mt-4 w-full rounded-lg bg-gray-950 py-2.5 text-sm font-medium text-white transition hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-50">
+          {exited ? `✓ Added to Stack` : `Add to Stack`}
       </button>
 
     </div>

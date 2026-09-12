@@ -12,6 +12,7 @@ const ExploreTechnologies = ({exploreTechnologyPromise}:IExploreTechnologiesProp
     const [stacks, setStacks] = useState<ITechnologyType[]>([]);
 
     const handelStack = (t:ITechnologyType):void=>{
+
         const newStack = [...stacks, t];
         setStacks(newStack);
     }
@@ -20,7 +21,7 @@ const ExploreTechnologies = ({exploreTechnologyPromise}:IExploreTechnologiesProp
             {/* 70% */}
             <div className="col-span-9 grid grid-cols-1 md:grid-cols-3 gap-4">
                 {
-                    technologies.map(technology => <ExploreTechnologyCard key={technology.id} technology={technology} handelStack={handelStack} />)
+                    technologies.map(technology => <ExploreTechnologyCard key={technology.id} technology={technology} handelStack={handelStack} stacks={stacks}/>)
                 }
             </div>
             {/* 30% */}
