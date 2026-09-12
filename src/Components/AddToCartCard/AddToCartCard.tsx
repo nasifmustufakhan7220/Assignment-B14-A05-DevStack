@@ -1,12 +1,20 @@
 import { RxCross2 } from "react-icons/rx";
 import type { ITechnologyType } from "../../Type/Type";
+import type { Dispatch, SetStateAction } from "react";
 
 interface IAddToCartCard {
     stack: ITechnologyType;
+    stacks: ITechnologyType[];
+    setStacks: Dispatch<SetStateAction<ITechnologyType[]>>
 }
 
-const AddToCartCard = ({stack}: IAddToCartCard) => {
+const AddToCartCard = ({stack, stacks, setStacks}: IAddToCartCard) => {
     const {icon, name, category} = stack;
+
+    const hendelRemove = (t:ITechnologyType)=>{
+      const filteredData = stacks.filter(st => st.id !== t.id);
+      setStacks(filteredData);
+    }
     return (
         <div className="flex justify-between rounded-2xl border-2 border-slate-200 bg-white px-8 py-2">
           {/* Left Side */}
@@ -31,7 +39,8 @@ const AddToCartCard = ({stack}: IAddToCartCard) => {
 
 
       {/* Close Button */}
-      <button
+      <button onClick={()=>hendelRemove(stack)}
+
         type="button"
         aria-label="Remove Svelte"
         className="flex h-10 w-10 items-center justify-center text-slate-400 transition hover:text-slate-600"

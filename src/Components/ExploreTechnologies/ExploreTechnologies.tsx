@@ -16,6 +16,10 @@ const ExploreTechnologies = ({exploreTechnologyPromise}:IExploreTechnologiesProp
         const newStack = [...stacks, t];
         setStacks(newStack);
     }
+
+    const hendelRemoveAll = ()=>{
+        setStacks([]);
+    }
     return (
         <div className="max-w-340 mx-auto p-8 grid grid-cols-1 md:grid-cols-12 gap-4">
             {/* 70% */}
@@ -46,7 +50,7 @@ const ExploreTechnologies = ({exploreTechnologyPromise}:IExploreTechnologiesProp
                         {
                             stacks.length > 0 ? <div className="grid grid-cols-1 gap-2">
                             {
-                                stacks.map(stack => <AddToCartCard key={stack.id} stack={stack} />)
+                                stacks.map(stack => <AddToCartCard key={stack.id} stack={stack} stacks={stacks} setStacks={setStacks} />)
                             
                         
                             }
@@ -58,7 +62,7 @@ const ExploreTechnologies = ({exploreTechnologyPromise}:IExploreTechnologiesProp
                          
                     </div>
                     {
-                            stacks.length > 0 ? <button className="btn btn-block  btn-outline btn-secondary">Remove All</button> : ``
+                            stacks.length > 0 ? <button onClick={hendelRemoveAll} className="btn btn-block  btn-outline btn-secondary">Remove All</button> : ``
                     }
                 </div>
                
