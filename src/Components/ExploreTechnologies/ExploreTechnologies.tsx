@@ -85,7 +85,7 @@ const ExploreTechnologies = ({exploreTechnologyPromise}:IExploreTechnologiesProp
                          
                     </div>
                     {
-                            stacks.length > 0 ? <button onClick={hendelRemoveAll} className="btn btn-block  btn-outline btn-secondary">Remove All</button> : ``
+                            stacks.length > 0 ? <button onClick={hendelRemoveAll} className="mt-5 btn btn-block border-2 border-[#ff6b35] text-[#ff6b35]  font bold rounded-1xl hover:bg-[#ff6b35] hover:text-white">Remove All</button> : ``
                     }
                 </div>
                
