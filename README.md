@@ -226,3 +226,26 @@ Aspiring Full-Stack Web Developer | AI-Driven Web Engineering
 If you like this project, please give it a star on GitHub.
 
 Thank you for visiting my project! 🚀
+
+
+
+
+
+<!-- Questions: -->
+
+1.What is JSX, and why is it used in React?
+Ans: JavaScript XML. It allows to write HTML like markup inside a javaScript file. In react, it is used to make building dynamic user interfaces faster, safer, and much easier to read.
+
+2.What is the difference between props and state?
+Ans: Props is a way to send data from parent to its child and state is way to change UI on User clicks.
+3.What does the useState hook do, and where did you use it in this project?
+Ans: useState changes states on User clicks and i used useState on loading JSON data, add to card to stack etc.
+4.What does the useEffect hook do, and why did you need it to load the JSON data?
+Ans: useEffect is a react hook that hendels side effect of a application like load data from an api. You need it because it stops infinite rendering loops by limiting the data fetch to run only once when the page loads, keeping your app fast and responsive.
+5.Why does every item in a .map() list need a unique key prop?
+Ans: React uses key to identify each list item uniquely. This helps React know which item changed, was added, or removed. Without it react render list successfully, but by using this, is the best.
+
+6.What is conditional rendering? Show one place you used it (example: the empty stack message).
+Ans: Conditional rendering is a way to show different things based on state changes. I used conditional rendering inside the "ExploreTechnologies.tsx component to show **Remove all** button. Like, if stacks has data or its length is greater than 0, then show the **Remove all** button.
+7.How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+Ans: I pass data from a parent component to a child component by props and i send data from child to parent by lift up a state in parent component, like in a central place.
