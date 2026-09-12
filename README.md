@@ -6,7 +6,7 @@ DevStack is a modern and responsive technology explorer website. It helps develo
 
 ## 🌐 Live Demo
 
-[Visit Live Website](https://dev-stack-tawny.vercel.app/)
+[Visit Live Website](https://technologies-by-dev-stack.netlify.app/)
 
 ## 📂 GitHub Repository
 
